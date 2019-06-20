@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<div id="app">
+  <h1>{{greeting}}</h1>
+  <div v-if="page == 'start'">
+    <p>Click Start</p>
+    <button v-on:click="page = 'yahtzee'">Start</button>
+  </div>
+  <div v-if="page =='yahtzee'">
+    <button v-on:click="page = 'yahtzee'">Yahtzee</button>
+    <button v-on:click="page='fact_checker'">Fact Checker</button>
+    <p>Yahtzee</p>
+    <p>Instructions</p>
+    <span v-for="number in yahtzee_roll"> {{number}}  </span>
+    <button v-on:click="computed_roll">reroll</button>
+    <p>You have rolled Yahtzee {{yahtzee_score}} out of {{roll}}</p>
+  </div>
+  <div v-if="page == 'fact_checker'">
+    <button v-on:click="page = 'yahtzee'">Yahtzee</button>
+    <button v-on:click="page='fact_checker'">Fact Checker</button>
+    <p>Fact Checker</p>
+    <div v-for="fact in facts">{
+      {fact.text}} <br>
+      <div v-if="true_false">
+      <button v-on:click="checkAnswer()">True</button>
+      <button v-on:click="checkAnswer()">False</button>
+    </div>
+      <button v-on:click="checkAnswer()" v-if="next">False</button>
+      <p>You have gotten {{correct}}/ {{total}} correct</p>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="code.js"></script>
+</html>

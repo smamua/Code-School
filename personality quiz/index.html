@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<div id="app">
+  <header>
+    <span>personalityQuestionnaire</span>
+    <nav>
+      <ul>
+        <li>results</li>
+        <li>about</li>
+      </ul>
+    </nav>
+  </header>
+  <div>
+    <p v-for="question in questions">{{question.quest}} {{question.options}}
+      
+    <input type="radio" v-model="question.answer" value="question.answer">option
+
+    <p>
+    </p>
+
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="code.js"></script>
+</html>

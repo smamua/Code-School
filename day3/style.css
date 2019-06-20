@@ -1,0 +1,17 @@
+[v-cloak]{
+  display: none;
+}
+
+#app{
+  text-align: center;
+}
+nav span{
+  cursor: pointer;
+}
+nav span:hover{
+  color: gray;
+}
+.image{
+  width: 300px;
+  height: 300px;
+}

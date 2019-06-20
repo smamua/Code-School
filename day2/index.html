@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<div id="app">
+   <h1>{{greeting}}</h1>
+   <h3>Section v-if</h3>
+   <p v-if="seen"> Now you see me</p>
+   <p v-else>Now you don't</p>
+   <button v-on:click="seen = !seen">toggle</button>
+   <p v-if="page == 'one'">Page 1</p>
+   <p v-else-if="page =='two'">Page 2</p>
+   <p v-else>Page 3</p>
+   <button v-on:click="FlipThePage()">Flip the page</button>
+   <h3>Section: Computed</h3>
+   <p>{{number1}} + {{number2}} == {{answer}}</p>
+   <h3>Section v-for</h3>
+   <ol>
+     <li v-for="topic in topics">{{topic}}</li>
+   </ol>
+   <p>Students</p>
+   <ul>
+     <li v-for="student in students">
+       <p>Name: {{student.name}}</p>
+       <p>Age: {{student.age}}</p>
+     </li>
+   </ul>
+   <h3>Section: v-bind</h3>
+   <p v-bind:class="{red: urgent, bold: important}">red</p>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="code.js"></script>
+</html>

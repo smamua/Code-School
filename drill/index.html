@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<div id="app" class="border" v-cloak>
+   <h1>Checkout: Skateboard</h1>
+   Pick a deck: <br>
+   <img v-bind:src="imageDeck" class="image"><br>
+   <input type="radio" name="deck" value="basswood" v-on:click="image='basswood' deck ='basswood'">Basswood
+   <input type="radio" name="deck" value="maple" v-on:click="image='maple' deck = 'maple'">Maple
+   <input type="radio" name="deck" value="white oak" v-on:click="image='white_oak'">white Oak<br>
+   Pick your wheels:<br>
+   <img v-bind:src="imageWheels" class="image"><br>
+   <input type="radio" name="wheels" value="basswood" v-on:click="image='white'">white
+   <input type="radio" name="wheels" value="maple" v-on:click="image='white'">green
+   <input type="radio" name="wheels" value="white oak" v-on:click="image='red'">red<br>
+   Pick your design:<br>
+   <img v-bind:src="imageDesign" class="image"><br>
+   <input type="radio" name="wheels" value="basswood" v-on:click="image='white'">white
+   <input type="radio" name="wheels" value="maple" v-on:click="image='white'">green
+   <input type="radio" name="wheels" value="white oak" v-on:click="image='red'">red<br>
+   Other Options:<br>
+   <input type="checkbox" value="Smooth Riding">Smooth Riding
+   <input type="checkbox" value="Transaction Control">Transaction Control
+   <input type="checkbox" value="Stickers">Stickers
+   <input type="checkbox" value="Insurance">Insurance<br>
+   Cost: {{cost}}<br>
+   Tax: {{tax}}<br>
+   Total Cost:"{{cost}} + {{tax}}"
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="code.js"></script>
+</html>

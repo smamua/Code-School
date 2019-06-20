@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<div id="app">
+  <div id="eight-ball">
+    <div id="eight-ball-answer">
+      <p>{{answer}}</p>
+    </div>
+
+  </div>
+
+  <h1>8ball</h1>
+  <h4>Go ahead, ask a question.</h4>
+  <input type="text" v-model="question" v-on:keyup="checkQuestion()">
+  <p>{{feedback}}</p>
+  <button v-on:click="askQuestion">Ask Question</button>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="code.js"></script>
+</html>

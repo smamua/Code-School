@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<div id="app">
+  <h1>{{greeting}}</h1>
+  <div v-on:click="click()" v-on:mouseover="mouseover" v-bind:class ="ComputeClass">
+    <p>I have been clicked: {{clicked}}</p>
+    <p>I am being hovered: {{hovering}}</p>
+  </div>
+
+  <div v-bind:class="positionClass">
+    <p>I am on the {{position}} side </p>
+  </div>
+  <h3>v-for with global Events</h3>
+  <p v-for="name in names">{{name}}</p>
+
+
+<!-- Game -->
+  <div class="board">
+    <div class="piece" v-bind:style="pieceStyle"></div>
+    <div class="goal" v-bind:style="goalStyle"></div>
+  </div>
+  <h1 v-if="victory" id="win">You win!</h1>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="code.js"></script>
+</html>

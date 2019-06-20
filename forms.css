@@ -1,0 +1,41 @@
+#fname{
+    width:45%;
+}
+#lname{
+    width:50%;
+}
+#address{
+    width: 60%;
+}
+#apt{
+    width: 35%
+}
+#email{
+    width: 45%;
+}
+
+input, textarea, #state{
+   padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input:hover{
+    background-color: royalblue;
+}
+body{
+    background-color: lightgray;
+}
+div{
+    background-color: aliceblue;
+    color: aqua;
+    padding: 20px;
+}
+#message{
+     width: 95%;
+}
+#state{
+    width: 21%;
+}

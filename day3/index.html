@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<div id="app" v-cloak>
+   <h1>{{greeting}}</h1>
+   <nav>
+     <span v-on:click="page ='computed'">Computed</span> |
+     <span v-on:click="page ='v-bind'">v-bind</span> |
+     <span v-on:click="page ='v-model'">v-model</span>
+   </nav>
+   <div v-if = "page =='computed'">
+     <h3>Computed Example:</h3>
+     <p>{{number1}} {{number2}}</p>
+     <button v-on:click="number1++">add number 1</button>
+     <button v-on:click="number2++">add number 2</button>
+     <p v-if="ten">You've reached 10</p>
+
+     <h3>Larry Example: </h3>
+     <p v-for="(person, index) in people" v-on:click="becomeLary(index)">{{ person.name }}</p>
+     <p v-if="no_larrys">There are no Larrys</p>
+     <p v-if="some_larrys">There are some Larrys</p>
+     <p v-if="all_larrys">There are all Larrys</p>
+   </div>
+   <div v-if = "page == 'v-bind'">
+     <h3>v-bind Example: </h3>
+     <img v-bind:src="imageSource" class="image" v-bind:style="{opacity: image_opacity}"><br>
+     <button v-on:click = "image = 'panther'">panther</button>
+     <button v-on:click = "image = 'horse'">horse</button>
+     <p>opacity</p>
+     <input type="range" min="0" max="1" step="0.01" v-model="image_opacity">
+   </div>
+   <div v-if = "page == 'v-model'">
+     <h3>Hotel Checkout</h3>
+     Bed Size:
+     <input type="radio" value="King" name="bed" v-model="bed_size">King
+     <input type="radio" value="Queen" name="bed" v-model="bed_size">Queen
+     <input type="radio" value="Double" name="bed" v-model="bed_size">Double<br>
+     Amenities:
+     <input type="checkbox" name="" value="Bath" v-model="amenities"> Bath
+     <input type="checkbox" name="" value="Porch" v-model="amenities"> Porch
+     <input type="checkbox" name="" value="Gym access" v-model="amenities"> Gym Access
+     <input type="checkbox" name="" value="2 Bathrooms" v-model="amenities"> Bathrooms<br>
+     Cost: {{computedCost}}<br>
+     <button v-if="bed_size != ''" v-on:click="alert'"></button>
+   </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="code.js"></script>
+</html>

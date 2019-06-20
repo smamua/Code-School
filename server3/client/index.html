@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="code.css">
+    <title></title>
+  </head>
+  <div id="app">
+    <h1>{{greeting}}</h1>
+    <ul>
+      <li v-for="name in names">{{name}}</li>
+    </ul>
+    <button v-on:click="loadNames()">Load Names</button><br>
+    <input type="text" v-model="new_name">
+    <button v-on:click="submitNewName()">Submit</button>
+    <p>{{counter}}</p>
+    <button v-on:click="counter++">Increment</button>
+
+    <p v-if="age_group != ''">You are a(n) {{age_group}}</p>
+    <input type="number" v-model="age">
+    <button v-on:click="loadAgeGroup()">Load Age Group</button>
+
+    <ul>
+      <li v-for="number in numbers">{{number}}</li>
+    </ul>
+    <button v-on:click="loadNumbers()">Load Numbers</button>
+    <input type="number" v-model="new_number"><br>
+    <button v-on:click="submitNumber()"></button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="code.js"></script>
+
+</html>
